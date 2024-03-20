@@ -10,7 +10,13 @@
 </head>
 <body>
     <%-include("../partials/nav.ejs"); -%>
-    <div class="container"></div>
+    <div class="container">
+        <ul>
+        <%pics.forEach((items)=>{%>
+            <li><%= items._id%></li>
+        <%})%>
+        </ul>
+    </div>
     <%-include("../partials/navScript.ejs"); -%>
 </body>
 </html>

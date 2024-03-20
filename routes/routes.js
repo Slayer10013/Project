@@ -24,7 +24,17 @@ router.get('/',(req, res)=>{
 })
 
 router.get('/buy',(req,res)=>{
-    res.render('buy',{"name":req.session.username});
+    var carpics = [];
+    cars.find({}).toArray().then(result=>{
+        result.forEach(element => {
+            var obj = {
+                "_id":element._id,
+                "pic":element.image
+            }
+            carpics.push(obj);
+        });
+    })
+    res.render('buy',{"name":req.session.username,"pics":carpics});
 })
 
 router.get('/sell',(req,res)=>{
