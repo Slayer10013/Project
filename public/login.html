@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="container">
+        <div class="signup-forms">
+            <div class="circle circle-one"></div>
+            <div class="form-container">
+                <img src="./images/6.png" alt="Dodge Challenger Demon" class="car" />
+                <h1 class="opacity">
+                    Log In
+                </h1>
+                <form action="/login" method="post" enctype="application/x-www-form-urlencoded">
+                    <input type="text" name="username" placeholder="Name" required /><br><br>
+                    <input type="password" id="pass" name="password" placeholder="Password" required /><br><br>
+                    <input type="text" name="role" placeholder="Role"><br><br>
+                    <input type="submit" value="Submit" class="opacity" id="sbmt" />
+                </form>
+                <div class="register-forget opacity">
+                    <a href="./signup.html">REGISTER</a>
+                    <a href="">FORGOT PASSWORD</a>
+                </div>
+            </div>
+            <div class="circle circle-two"></div>
+        </div>
+        <div class="theme-btn-container"></div>
+    </section>
+</body>
+<script src="./signup.js"></script>
+</html>

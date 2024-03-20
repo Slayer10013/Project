@@ -1,0 +1,55 @@
+<header>
+    <img src="./images/2.jpg" alt="logo" class="logo">
+    <h1>
+        CAR ZONE
+    </h1>
+    <div></div>
+</header>
+<nav>
+    <div>
+        <input type="checkbox" name="chkbx" id="chkbx">
+        <label for="chkbx">
+            <ion-icon name="search-circle-outline" id="srch"></ion-icon>
+        </label>
+        <input type="search" id="sch" placeholder="Search...">
+    </div>
+    <ul type="none" class="lst">
+        <li class="lstitem">
+            <a href="/">
+                Home
+            </a>
+        </li>
+        <li class="lstitem">
+            <a href="/dashboard/buy">
+                Buy
+            </a>
+        </li>
+        <li class="lstitem">
+            <a href="/dashboard/sell">
+                Sell
+            </a>
+        </li>
+        <li class="lstitem">
+            <a href="/dashboard/know">
+                Knowledge
+            </a>
+        </li>
+        <li class="lstitem">
+            <a href="/dashboard/aboutus">
+                About Us
+            </a>
+        </li>
+        <li class="lstitem">
+            <a href="/dashboard/contactus">Contact Us</a>
+        </li>
+    </ul>
+    <div class="user">
+        <%=name %><br>
+        <div class="checkbox-wrapper-54">
+            <label class="switch">
+                <input type="checkbox" onclick="toggleTheme()">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css" type="text/css">
+    <%-include("../partials/navCss.ejs"); -%>
+    <title>Document</title>
+</head>
+<body>
+    <%-include("../partials/nav.ejs"); -%>
+    <h1 class="nm">
+        Welcome <%= name %> !!!
+    </h1>
+    <div class="container">
+        <div class="move" id="buy">
+            <img src="./images/1.png" alt="Ford mustang" id="mustang"><br>
+            Interested in buying a second hand car or a part??<br>
+            Let's show you what we have got
+            <div class="btn">
+                <a href="/dashboard/buy">
+                    Buy
+                </a>
+            </div>
+        </div>
+        <div class="move" id="sell">
+            <img src="./images/3.jpg" alt="Nissan 240ZG" id="devilz"><br>
+            Got a new Car or Part and can't take care of old one??<br>
+            We'll ensure you to connect to someone who'll take care of this beauty.
+            <div class="btn">
+                <a href="/dashboard/sell">
+                    Sell
+                </a>
+            </div>
+        </div>
+        <div class="move" id="know">
+            <img src="./images/4.png" alt="Toyota GT86" id="gt86"><br>
+            Interested in buying a brand new car or part??<br>
+            Let's know more about  the cars that are ever made.All there advantages and disadvantages. Working of parts.
+            Side effects of parts on your vehicle.
+            <div class="btn">
+                <a href="/dashboard/know">
+                    Know More..
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="logout">
+        <a href="/lgout">
+            Log Out
+        </a>
+    </div>
+    <%-include("../partials/navScript.ejs"); -%>
+</body>
+</html>

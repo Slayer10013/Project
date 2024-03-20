@@ -1,0 +1,66 @@
+body{
+    background-image: url("./images/7.png");
+    background-size: cover;
+}
+body.light{
+    background-image: url("./images/9.jpg");
+}
+.container{
+    width: 98vw;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+.container form{
+    /* border: 2px solid black; */
+    color: whitesmoke;
+    display: flow-root;
+}
+form h1{
+    text-align: center;
+    color: red;
+    text-shadow: 2px 2px cyan;
+    /* border: 2px solid black; */
+    font-size: 35px;
+    margin-bottom: 0;
+}
+table{
+    /* border: 2px solid white; */
+    margin-top: 0;
+    width: 100%;
+}
+td{
+    /* border: 2px solid black; */
+    width: 50%;
+    margin: 5px;
+    padding: 5px;
+}
+label{
+    font-size: 25px;
+}
+td input{
+    font-size: 25px;
+    background-color: rgb(255, 255, 255, 0.3);
+    width: 100%;
+    border-radius: 5px;
+}
+#submission{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#submission input{
+    font-size: 25px;
+    background-color: rgb(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+#submission input:hover{
+    border: none;
+    font-size: 35px;
+    /* z-index: 5; */
+    background-color: transparent;
+    font-family: algerian;
+    color: red;
+    text-shadow: 2px 2px cyan;
+}

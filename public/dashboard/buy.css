@@ -1,0 +1,7 @@
+body{
+    background-image: url("./images/10.jpg");
+    background-size: cover;
+}
+body.light{
+    background-image: url("./images/11.jpg.jpeg");
+}

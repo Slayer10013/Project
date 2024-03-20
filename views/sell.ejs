@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sell.css">
+    <%-include("../partials/navCss.ejs"); -%>
+    <title>Document</title>
+</head>
+<body>
+    <%-include("../partials/nav.ejs"); -%>
+    <div class="container">
+        <form action="/sellcar" method="post" enctype="multipart/form-data" class="carSell">
+            <h1>
+                Sell a Car
+            </h1><br/>
+            <table>
+                <tr>
+                    <td>
+                        <label for="name">
+                            Current Owner*: 
+                        </label><br/>
+                        <input type="text" id="name" name="name" value="<%=name %>" required/> 
+                    </td>
+                    <td>
+                        <label for="cname">
+                            Car Name*: 
+                        </label><br/>
+                        <input type="text" id="cname" name="cname" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="cmpny">
+                            Company*: 
+                        </label><br/>
+                        <input type="text" name="cmpny" id="cmpny" required/>
+                    </td>
+                    <td>
+                        <label for="price">
+                            Expected price*: 
+                        </label><br/>
+                        <input type="number" name="price" id="price" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="distance">
+                            Distance Travelled*: 
+                        </label><br/>
+                        <input type="number" name="distance" id="distance" placeholder="..in km" required/>
+                    </td>
+                    <td>
+                        <label for="fines">
+                            Fines*: 
+                        </label><br/>
+                        <input type="number" name="fines" id="fines" placeholder="Challan..." required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="rexpiry">
+                            Expiry date on RC*: 
+                        </label><br/>
+                        <input type="date" name="rexpiry" id="rexpiry" required/>
+                    </td>
+                    <td>
+                        <label for="rnum">
+                            Registration Number*: 
+                        </label><br/>
+                        <input type="text" name="rnum" id="rnum" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="category">
+                            Category*: 
+                        </label><br/>
+                        <input type="text" name="category" id="category" required/>
+                    </td>
+                    <td>
+                        <label for="color">
+                            Color*: 
+                        </label><br/>
+                        <input type="text" name="color" id="color" required/>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="prblm">
+                            Problems(if any): 
+                        </label><br/>
+                        <input type="text" name="prblm" id="prblm" value="None">
+                    </td>
+                    <td>
+                        <label for="img">
+                            Image
+                        </label><br/>
+                        <input type="file" accept=".jpg" name="img" id="img">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="specification">
+                            Specifications: 
+                        </label><br/>
+                        <input type="text" name="specification" id="specification" value="Any specification/modification personally done…">
+                    </td>
+                </tr>
+            </table>
+            <div id="submission">
+                <input type="submit" value="Submit"/>
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+    <%-include("../partials/navScript.ejs"); -%>
+</body>
+</html>

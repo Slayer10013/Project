@@ -1,0 +1,160 @@
+<style>
+    *{
+        word-break: keep-all;
+    }
+    header{
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        /* background-color: black; */
+    }
+    .logo{
+        height: 80px;
+        width: 200px;
+        mix-blend-mode: color-dodge;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        animation: rotation 6s;
+    }
+    header h1{
+        /* width: 80vw; */
+        height: 100px;
+        color: initial;
+        text-shadow: 3px 3px aqua;
+        text-align: center;
+        font-size: 80px;
+        font-family: 'wide latin';
+        margin: 0;
+        border-radius: 10px;
+        line-height: 90%;
+        -webkit-text-stroke: 2px red;
+    }
+    #chkbx{
+        display: none;
+    }
+    #srch{
+        position: relative;
+        width: 50px;
+        color: whitesmoke;
+        height: 50px;
+    }
+    #sch{
+        display: none;
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .lst{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .lstitem{
+        margin: 5px;
+        padding: 7px;
+    }
+    .lstitem a{
+        text-decoration: none;
+        font-size: 2em;
+        color: transparent;
+        text-shadow: 2 px aqua;
+        -webkit-text-stroke: 1px red;
+    }
+    .lstitem a:hover{
+        border: 2px inset red;
+        box-shadow: 2px 2px 2px 2px aqua;
+        border-radius: 15px;
+        color: black;
+        font-weight: 200;
+    }
+    .checkbox-wrapper-54 input[type="checkbox"] {
+        visibility: hidden;
+        display: none;
+    }
+    .checkbox-wrapper-54 *, .checkbox-wrapper-54 ::after, .checkbox-wrapper-54 ::before {
+    box-sizing: border-box;
+    }
+    /* The switch - the box around the slider */
+    .checkbox-wrapper-54 .switch {
+        --width-of-switch: 3.5em;
+        --height-of-switch: 2em;
+        /* size of sliding icon -- sun and moon */
+        --size-of-icon: 1.4em;
+        /* it is like a inline-padding of switch */
+        --slider-offset: 0.3em;
+        position: relative;
+        width: var(--width-of-switch);
+        height: var(--height-of-switch);
+        display: inline-block;
+    }
+    /* The slider */
+    .checkbox-wrapper-54 .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        /* background-color: #f4f4f5; */
+        background-color: transparent;
+        transition: .4s;
+        border-radius: 30px;
+    }
+    .checkbox-wrapper-54 .slider:before {
+        position: absolute;
+        content: "";
+        height: var(--size-of-icon,1.4em);
+        width: var(--size-of-icon,1.4em);
+        border-radius: 20px;
+        left: var(--slider-offset,0.3em);
+        top: 50%;
+        transform: translateY(-50%);
+        background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+        transition: .4s;
+    }
+    .checkbox-wrapper-54 input:checked + .slider {
+        /* background-color: #303136; */
+        background-color: transparent;
+    }
+    .checkbox-wrapper-54 input:checked + .slider:before {
+        left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+        /* background: #303136; */
+        background: transparent;
+        /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+        box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+    }
+    @keyframes rotation {
+        0%{
+            border-top: 2px solid aqua;
+            border-left: 0px solid aqua;
+            border-bottom: 0px solid aqua;
+            border-right: 0px solid aqua;
+        }
+        25%{
+            border-top: 0px solid aqua;
+            border-left: 2px solid aqua;
+            border-bottom: 0px solid aqua;
+            border-right: 0px solid aqua;
+        }
+        50%{
+            border-top: 0px solid aqua;
+            border-left: 0px solid aqua;
+            border-bottom: 2px solid aqua;
+            border-right: 0px solid aqua;
+        }
+        75%{
+            border-top: 0px solid aqua;
+            border-left: 0px solid aqua;
+            border-bottom: 0px solid aqua;
+            border-right: 2px solid aqua;
+        }
+        100%{
+            transform: rotateX(360deg);
+            border: 2px solid aqua;
+        }
+    }
+</style>
