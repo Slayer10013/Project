@@ -5,3 +5,16 @@ body{
 body.light{
     background-image: url("./images/11.jpg.jpeg");
 }
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: scroll;
+}
+.gaadiya{
+    width: 95vw;
+    padding: 5px;
+}
+.gaadiya img{
+    height: 250px;
+    width: 100%;
+}

@@ -24,17 +24,18 @@ router.get('/',(req, res)=>{
 })
 
 router.get('/buy',(req,res)=>{
-    var carpics = [];
+    //var carpics = [];
     cars.find({}).toArray().then(result=>{
-        result.forEach(element => {
-            var obj = {
-                "_id":element._id,
-                "pic":element.image
-            }
-            carpics.push(obj);
-        });
+        // result.forEach(element => {
+        //     var obj = {
+        //         "_id":element._id,
+        //         "pic":element.image
+        //     }
+        //     carpics.push(obj);
+        // });
+        res.render('buy',{"name":req.session.username,"pics":result});
     })
-    res.render('buy',{"name":req.session.username,"pics":carpics});
+    // res.render('buy',{"name":req.session.username,"pics":carpics});
 })
 
 router.get('/sell',(req,res)=>{
