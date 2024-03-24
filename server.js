@@ -121,7 +121,7 @@ server.post('/sellcar',upload.single('img'),(req,res)=>{
     var cobj = {
         "username": req.body.name,
         "car_name": req.body.cname,
-        "car_comapny": req.body.cmpny,
+        "car_company": req.body.cmpny,
         "price":req.body.price,
         "distance_travelled":req.body.distance,
         "fines":req.body.fines,

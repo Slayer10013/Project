@@ -10,14 +10,36 @@
 </head>
 <body>
     <%-include("../partials/nav.ejs"); -%>
-    <div class="container">
+    <section class="container">
         <!-- <img src="./file/1701332629391.jpg" alt="qwsdfv"> -->
         <%pics.forEach((items)=>{%>
             <div class="gaadiya">
+                <div class="data">
+                    <strong>Name of Owner:</strong> <%=items.username %> <br>
+                    <strong>Brand of Car:</strong> <%=items.car_company %> <br>
+                    <strong>Name of Car:</strong> <%=items.car_name %> <br>
+                    <strong>Registration Number of Car:</strong> <%=items.registration_Number %> <br>
+                    <strong>Expiry Date of RC:</strong> <%=items.rc_expiry %> <br>
+                    <strong>Distance Travelled by Car:</strong> <%=items.distance_travelled %> <br>
+                    <strong>Category:</strong> <%=items.category %> <br>
+                    <strong>Problems of Car:</strong> <%=items.problems %> <br>
+                    <strong>Colour of Car:</strong> <%=items.color %> <br>
+                    <strong>Fines/Challan:</strong> <%=items.fines %> <br>
+                    <strong>Expected Price:</strong> <%=items.price %> <br>
+                    <strong>Specifications:</strong> <%=items.specs %> <br>
+                    <div class="get">
+                        <form action="/getCar" method="post">
+                            <input type="hidden" name="id" value="<%= items._id %>">
+                            <button type="submit">
+                                Buy
+                            </button>
+                        </form>
+                    </div>
+                </div>
                 <img src= "<%-items.image %>" alt="pic">
             </div>
         <%})%>
-    </div>
+    </section>
     <%-include("../partials/navScript.ejs"); -%>
 </body>
 </html>

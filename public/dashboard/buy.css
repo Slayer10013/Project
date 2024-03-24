@@ -1,20 +1,60 @@
 body{
     background-image: url("./images/10.jpg");
     background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    /* padding: 0; */
 }
 body.light{
     background-image: url("./images/11.jpg.jpeg");
 }
+
 .container{
-    display: flex;
-    flex-wrap: wrap;
-    overflow-x: scroll;
+    height: 100%;
+    width: 98%;
+    scroll-snap-type: y mandatory;
+    overflow-x: hidden;
 }
 .gaadiya{
-    width: 95vw;
+    height: 100vh;
+    width: 98vw;
+    scroll-snap-align:  start;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
     padding: 5px;
 }
-.gaadiya img{
-    height: 250px;
-    width: 100%;
+.gaadiya>div{
+    /* height: 100vh; */
+    width: 48vw;
+    border-radius: 20px;
+    color: whitesmoke;
+    box-shadow: 0 0 8px cyan;
+    border: 2px inset red;
+    padding: 10px;
+    background-color: rgb(0, 0, 0, 0.6);
+}
+.gaadiya > img{
+    height: 100vh;
+    width: 48vw;
+    object-fit: contain;
+    /* border-radius: 20px; */
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.get{
+    margin: 10px;
+    font-size: 1.5em;
+    text-align: end;
+    transition: all ease-in-out .5s;
+}
+.get button:hover{
+    cursor: pointer;
+    border: none;
+    transform: scale(2);
+    background-color: transparent;
+    color: red;
+    text-shadow: 1px 1px cyan;
 }
