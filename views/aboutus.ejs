@@ -10,6 +10,50 @@
 </head>
 <body>
     <%-include("../partials/nav.ejs"); -%>
+    <!-- About Us Section -->
+    <h1>
+        About Us
+    </h1>
+    <div class="site">
+        <h2 style="text-align: center;">
+            Our WebSite
+        </h2>
+        This is an amazing and trustworthy platform where you can buy as well as sell your car.
+        We are a leading online platform for buying and selling cars. 
+        Our mission is to make the car buying and selling process easy, transparent, and enjoyable for everyone involved.
+        There is no doubt that we're a new players in the market but we promise you the quality no-one else does. 
+        Our platform connects buyers and sellers from all over the country, providing them with the tools and resources they need to make informed decisions.
+        Whether you're looking to buy your first car or sell your current one, we've got you covered. 
+        Our extensive inventory of new and used cars, trucks, and SUVs ensures that you'll find exactly what you're looking for. 
+        And with our user-friendly interface, you can easily browse, compare, and purchase vehicles from the comfort of your own home.
+        At Car Zone, we pride ourselves on our commitment to customer satisfaction. 
+        We understand that buying or selling a car can be a stressful experience, which is why we go above and beyond to provide our customers with the support they need. 
+        Our team of experts is always available to answer questions, provide guidance, and help you navigate the car buying and selling process.
+        We believe that everyone deserves to have a positive experience when buying or selling a car. 
+        That's why we're dedicated to providing a platform that is transparent, trustworthy, and easy to use. 
+        We know the problems faced while buying a new car or selling a previous one, we tried to solve those. 
+        Please drop suggestions and problems you faced in comment box.
+    </div>
+    <!-- Future Plan -->
+    <div class="fplan">
+        <h2 style="text-align: center;">
+            Future Plan
+        </h2>
+        Currently, we're working on the knowledge section. It will contain all the data on the cars ever made. All of their services and problems will
+        be contained in that one section.<br>
+        &nbsp;After that, we're planning to add "parts" section to this website, so that you can get everything on a single platform. It will also
+        contain the details about the working of a particular part, so that our Buyers can be sure that what exactly is required by them. This will
+        also contain the working of the part and the possible side effects. <br>
+        &nbsp; Soon you'll get everything on one single platform.
+    </div>
+    <!-- Comment Section -->
+    <div class="cmt">
+        <form action="/comment" method="post" enctype="application/x-www-form-urlencoded">
+            <input type="text" name="nme" value="<%=name %>" style="display: none;" disabled/>
+            <textarea name="cmnt" id="cmnt" placeholder="Drop your comment <%=name %>...."></textarea>
+            <input type="submit" value="Done">
+        </form>
+    </div>
     <%-include("../partials/navScript.ejs"); -%>
 </body>
 </html>

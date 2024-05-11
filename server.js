@@ -28,6 +28,7 @@ let carZone;
 let users;
 let cars;
 let parts;
+let comments;
 
 // server.get('/signup',(req,res)=>{
 //     res.sendFile(path.join(__dirname,'/public/signup.html'));
@@ -39,6 +40,7 @@ client.connect("mongodb://127.0.0.1:27017").then(result=>{
     users = carZone.collection('Users');
     cars = carZone.collection('CarDeals');
     parts = carZone.collection('partDeals');
+    comments = carZone.collection('comments');
 }).catch(err=>{
     console.log("db  onnection failed............"+err);
 })
@@ -137,6 +139,17 @@ server.post('/sellcar',upload.single('img'),(req,res)=>{
         console.log(result);
         // req.session.username = req.body.username;
         // req.session.role = req.body.role;
+        res.redirect('/dashboard');
+    })
+})
+
+server.post('/comment',(req,res)=>{
+    var robj={
+        "username": req.body.nme,
+        "comments": req.body.cmnt,
+    }
+    comments.insertOne(robj).then(result=>{
+        console.log("Comment Added");
         res.redirect('/dashboard');
     })
 })

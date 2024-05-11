@@ -1,0 +1,60 @@
+body{
+    background-image: url("https://w0.peakpx.com/wallpaper/783/489/HD-wallpaper-dodge-charger-srt-night-2019-cars-supercars-yellow-charger-dodge.jpg");
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    overflow-x: hidden;
+    /* padding: 0; */
+}
+body.light{
+    background-image: url("https://hips.hearstapps.com/hmg-prod/images/29587537-24a3-4942-ad6a-d36857407e1d-64c120217c839.jpeg?crop=0.9374814814814815xw:1xh;center,top&resize=1200:*");
+    background-size: cover;
+}
+h1{
+    /* font-family: 'Raleway'; */
+    font-family: 'Brush Script MT', cursive;
+    font-size: 80px;
+    text-align: center;
+    color: aliceblue;
+    text-shadow: 4px 4px black;
+}
+.site,.fplan{
+    background-color: rgb(0, 0, 0, 0.5);
+    color: aliceblue;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 5px;
+    max-width: 98vw;
+}
+.site{
+    transition: all 0.2s ease-in-out;
+    animation: rotationR 6s;
+}
+.fplan{
+    transition: all 0.2s ease-in-out;
+    animation: rotationL 6s;
+}
+.cmt{
+    display: flex;
+    justify-content: center;
+    width: 95vw;
+    margin: 4vh;
+    padding: 2vh;
+}
+textarea{
+    height: 15vh;
+    width: 45vh;
+    background-color: transparent;
+    border: 2px inset black;
+}
+@keyframes rotationR {
+    100%{
+        transform: rotateX(360deg);
+    }
+}
+@keyframes rotationL {
+    100%{
+        transform: rotateY(360deg);
+    }
+}
