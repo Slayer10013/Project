@@ -42,10 +42,6 @@ router.get('/sell',(req,res)=>{
     res.render('sell',{"name":req.session.username});
 })
 
-router.get('/gCar',(req,res)=>{
-    res.render('gCar',{"name":req.session.username});
-})
-
 router.get('/know',(req,res)=>{
     res.render('know',{"name":req.session.username});
 })

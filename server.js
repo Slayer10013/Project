@@ -141,10 +141,6 @@ server.post('/sellcar',upload.single('img'),(req,res)=>{
     })
 })
 
-server.post('/getCar', (req,res)=>{
-    res.redirect('/dashboard/gCar');
-})
-
 server.get('/lgout',(req,res)=>{
     req.session.destroy();
     res.redirect("/");
