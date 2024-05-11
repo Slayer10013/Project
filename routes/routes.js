@@ -11,7 +11,7 @@ client.connect("mongodb://127.0.0.1:27017").then(result=>{
     carZone = result.db('CarZone');
     cars = carZone.collection('CarDeals');
 }).catch(err=>{
-    console.log("db  onnection failed............"+err);
+    console.log("db  connection failed............"+err);
 })
 
 // let carpics = [];
@@ -40,6 +40,10 @@ router.get('/buy',(req,res)=>{
 
 router.get('/sell',(req,res)=>{
     res.render('sell',{"name":req.session.username});
+})
+
+router.get('/gCar',(req,res)=>{
+    res.render('gCar',{"name":req.session.username});
 })
 
 router.get('/know',(req,res)=>{
