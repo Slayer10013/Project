@@ -6,10 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./contactus.css">
     <%-include("../partials/navCss.ejs"); -%>
-    <title>Document</title>
+    <title>Car Zone🏎️</title>
 </head>
 <body>
     <%-include("../partials/nav.ejs"); -%>
+    <!-- Contact -->
+    <div class="contact">
+        <div class="pnum">
+            Phone number:-> 123654789
+        </div>
+        <div class="mail">
+            Email address:-> abc@ghoo.com
+        </div>
+    </div>
+    <!-- Comment Section -->
+    <div class="comments">
+        <%comment.forEach((items)=>{%>
+            <div class="cmnts">
+                <%=items.comments %>
+            </div>
+        <%})%>
+    </div>
+    <h2>
+        Leave a comment on <strong>About Us Page</strong>
+    </h2>
     <%-include("../partials/navScript.ejs"); -%>
 </body>
 </html>

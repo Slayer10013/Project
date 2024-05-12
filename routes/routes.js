@@ -5,11 +5,13 @@ const router = express.Router();
 
 let carZone;
 let cars;
+let comments;
 
 client.connect("mongodb://127.0.0.1:27017").then(result=>{
     console.log("DB connected.........");
     carZone = result.db('CarZone');
     cars = carZone.collection('CarDeals');
+    comments = carZone.collection('comments');
 }).catch(err=>{
     console.log("db  connection failed............"+err);
 })
@@ -47,7 +49,10 @@ router.get('/know',(req,res)=>{
 })
 
 router.get('/contactus',(req,res)=>{
-    res.render('contactus',{"name":req.session.username});
+    comments.find({}).toArray().then(result=>{
+        res.render('contactus',{"name":req.session.username,"comment":result});
+    })
+    //res.render('contactus',{"name":req.session.username});
 })
 
 router.get('/aboutus',(req,res)=>{
