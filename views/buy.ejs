@@ -28,7 +28,7 @@
                     <strong>Expected Price:</strong> <%=items.price %> <br>
                     <strong>Specifications:</strong> <%=items.specs %> <br>
                     <div class="get">
-                        <form action="/getCar" method="post">
+                        <form action="/getCar" method="post" enctype="application/x-www-form-urlencoded">
                             <input type="hidden" name="id" value="<%= items._id %>">
                             <button type="submit">
                                 Buy

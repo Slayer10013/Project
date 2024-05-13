@@ -108,3 +108,6 @@ body.light .user, body.light .nm{
     text-shadow: 2px 2px cyan;
     /* -webkit-text-stroke: 2px cyan; */
 }
+::-webkit-scrollbar{
+    display: none;
+}

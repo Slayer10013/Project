@@ -143,6 +143,11 @@ server.post('/sellcar',upload.single('img'),(req,res)=>{
     })
 })
 
+// server.post('/getCar',(req,res)=>{
+//     cars.deleteOne(_id=req.body.id);
+//     res.redirect('/dashboard/buy');
+// })
+
 server.post('/comment',(req,res)=>{
     var robj={
         "username": req.body.nme,
