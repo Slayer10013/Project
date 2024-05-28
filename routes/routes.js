@@ -48,6 +48,10 @@ router.get('/know',(req,res)=>{
     res.render('know',{"name":req.session.username});
 })
 
+router.get('/know/:country',(req,res)=>{
+    res.render(req.params.country,{"name":req.session.username});
+})
+
 router.get('/contactus',(req,res)=>{
     comments.find({}).toArray().then(result=>{
         res.render('contactus',{"name":req.session.username,"comment":result});
