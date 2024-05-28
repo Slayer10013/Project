@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+}
+body.light{
+    background-color: white;
+}
+body.light svg path{
+    fill: #ececec;
+}
+svg{
+    /* overflow-x: scroll;
+    overflow-y: scroll; */
+    height: 100vh;
+    width: 100vw;
+}
+svg path:hover{
+    cursor: pointer;
+    /* fill: blue; */
+}
