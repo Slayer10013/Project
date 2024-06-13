@@ -8,7 +8,7 @@ let cars;
 let comments;
 
 client.connect("mongodb://127.0.0.1:27017").then(result=>{
-    console.log("DB connected.........");
+    console.log("DB connected to routes.........");
     carZone = result.db('CarZone');
     cars = carZone.collection('CarDeals');
     comments = carZone.collection('comments');
