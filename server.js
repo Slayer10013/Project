@@ -93,6 +93,8 @@ server.post('/signup',(req,res)=>{
                 "username": req.body.username,
                 "password": req.body.password,
                 "email": req.body.email,
+                "sques": req.body.ques,
+                "sans": req.body.ans,
                 "role": req.body.role
             }
             users.insertOne(robj).then(result=>{
