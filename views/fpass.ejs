@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <style>
+        .car{
+            position: absolute;
+            top: -40%;
+            right: -45px;
+            width: 90%;
+        }
+    </style>
+    <title>Car Zone🏎️</title>
+</head>
+<body>
+    <section class="container">
+        <div class="signup-forms">
+            <div class="circle circle-one"></div>
+            <div class="form-container">
+                <img src="https://www.pngmart.com/files/22/Land-Rover-Defender-PNG-Photos.png" alt="Dodge Challenger Demon" class="car"/>
+                <h1 class="opacity">
+                    Forgot
+                </h1>
+                <form action="/forgot" method="post" enctype="application/x-www-form-urlencoded">
+                    <label for="username"> Name: </label><br>
+                    <input type="text" name="username" placeholder="Name" required /><br><br>
+                    <label for="sol"><%=ques %>: </label><br>
+                    <input type="text" name="sol" placeholder="Answer" required /><br><br>
+                    <label for="pass">New Password: </label><br>
+                    <input type="password" name="pass" placeholder="New Password..." required /><br><br>
+                    <input type="submit" value="Submit" class="opacity" id="sbmt" />
+                </form>
+            </div>
+            <div class="circle circle-two"></div>
+        </div>
+        <div class="theme-btn-container"></div>
+    </section>
+</body>
+<script src="./signup.js"></script>
+</html>

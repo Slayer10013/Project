@@ -13,6 +13,8 @@ server.use(express.urlencoded({extended:false}));
 
 server.set("view engine", "ejs");
 
+//session and cookie creation
+
 const oneday = 1000*60*60*24;
 server.use(cookieParser());
 server.use(session({
@@ -27,19 +29,21 @@ server.use(session({
 let carZone;
 let users;
 let cars;
-let parts;
+//let parts;
 let comments;
 
 // server.get('/signup',(req,res)=>{
 //     res.sendFile(path.join(__dirname,'/public/signup.html'));
 // })
 
+// connecting database
+
 client.connect("mongodb://127.0.0.1:27017").then(result=>{
     console.log("DB connected.........");
     carZone = result.db('CarZone');
     users = carZone.collection('Users');
     cars = carZone.collection('CarDeals');
-    parts = carZone.collection('partDeals');
+    //parts = carZone.collection('partDeals');
     comments = carZone.collection('comments');
 }).catch(err=>{
     console.log("db  onnection failed............"+err);
@@ -48,6 +52,8 @@ client.connect("mongodb://127.0.0.1:27017").then(result=>{
 server.get('/login',(req,res)=>{
     res.sendFile(path.join(__dirname,'/public/login.html'));
 })
+
+// authenticating user
 
 server.post('/login',(req,res)=>{
     users.find({}).toArray().then(result=>{
@@ -77,8 +83,10 @@ server.post('/login',(req,res)=>{
 })
 
 server.get('/signup',(req,res)=>{
-    res.sendFile(path.join(__dirname,'/public/signup.html'))
+    res.sendFile(path.join(__dirname,'/public/signup.html'));
 })
+
+//creating another user account and adding it to database
 
 server.post('/signup',(req,res)=>{
     users.find({}).toArray().then(result=>{
@@ -107,7 +115,52 @@ server.post('/signup',(req,res)=>{
     })
 })
 
+var ques;
+var name;
+var mail;
+var ans;
+
+server.get('/fpass', (req,res)=>{
+    // console.log("Forgot password page requested......");
+    res.render('fpass');
+})
+
+// forget password
+
+server.post('/fpass',(req,res)=>{
+    // console.log(req.body.username + '\n' +req.body.mail);
+    users.find({}).toArray().then(result =>{
+        result.filter(ele=>{
+            if(ele.username==req.body.username && ele.email==req.body.mail && ele.role == req.body.role){
+                name = ele.username;
+                mail = ele.email;
+                ques =  ele.sques;
+                ans = ele.sans;
+                //console.log("Targetted data found...........");
+            }
+        })
+        if(ques){
+            res.render('fpass',{"ques": ques});
+        }
+        else{
+            res.redirect('/signup');
+        }
+    })
+})
+
+server.post('/forgot',(req,res)=>{
+    if(ans==req.body.sol){
+        users.updateOne({username:name, email:mail},{$set:{password:req.body.pass}});
+        res.redirect('/login');
+    }
+    else{
+        res.redirect('/');
+    }
+})
+
 var fname;
+
+//storing image
 
 const mstorage = multer.diskStorage({
     destination:(req,file,cb)=>{
@@ -120,6 +173,8 @@ const mstorage = multer.diskStorage({
 })
 
 const upload = multer({storage:mstorage});
+
+// adding data related to new car
 
 server.post('/sellcar',upload.single('img'),(req,res)=>{
     var cobj = {
@@ -161,12 +216,16 @@ server.post('/comment',(req,res)=>{
     })
 })
 
+// logout button
+
 server.get('/lgout',(req,res)=>{
     req.session.destroy();
     res.redirect("/");
 })
 
 server.use('/dashboard',checkred,dboard);
+
+// middleware
 
 function checkred(req,res,next){
     if(req.session.username){

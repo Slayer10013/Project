@@ -16,15 +16,24 @@
                 <h1 class="opacity">
                     Log In
                 </h1>
+                <div id="login">
                 <form action="/login" method="post" enctype="application/x-www-form-urlencoded">
                     <input type="text" name="username" placeholder="Name" required /><br><br>
                     <input type="password" id="pass" name="password" placeholder="Password" required /><br><br>
                     <input type="text" name="role" placeholder="Role"><br><br>
                     <input type="submit" value="Submit" class="opacity" id="sbmt" />
                 </form>
+                </div>
+                <form action="/fpass" method="post" enctype="application/x-www-form-urlencoded" id="forget">
+                    <input type="text" name="username" placeholder="Name" required /><br><br>
+                    <input type="email" id="mail" name="mail" placeholder="E-mail" required /><br><br>
+                    <input type="text" name="role" placeholder="Role"><br><br>
+                    <input type="submit" value="Submit" class="opacity" id="sbmt" />
+                </form>
                 <div class="register-forget opacity">
                     <a href="./signup.html">REGISTER</a>
-                    <a href="">FORGOT PASSWORD</a>
+                    <button id="btn" onclick="fpass()">FORGOT PASSWORD</button>
+                    <!-- <a href="/fpass">FORGOT PASSWORD</a> -->
                 </div>
             </div>
             <div class="circle circle-two"></div>
@@ -33,4 +42,14 @@
     </section>
 </body>
 <script src="./signup.js"></script>
+<script>
+    var form = document.getElementById("login");
+    var forget = document.getElementById("forget");
+    var btn = document.getElementById("btn");
+    function fpass(){
+        form.style.display = 'none';
+        forget.style.display = 'contents';
+        btn.style.display = 'none';
+}
+</script>
 </html>
